@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-   navLinks = [
+  navLinks = [
     {
       label: "Dashboard",
       path: "/dashboard"
@@ -17,7 +17,26 @@ export class SidebarComponent {
     {
       label: "Charts",
       path: "/charts"
-
+    },
+    {
+      label: "Statistics",
+      path: "/statistics"
+    },
+    {
+      label: "Goals",
+      path: "/goals"
+    },
+    {
+      label: "Assets",
+      path: "/assets"
+    },
+    {
+      label: "Market Trends",
+      path: "/market-trends"
+    },
+    {
+      label: "Advisory",
+      path: "/advisory"
     },
     {
       label: "Settings",
