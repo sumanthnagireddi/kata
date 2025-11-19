@@ -16,18 +16,18 @@ export class SidebarComponent {
       label: "Dashboard",
       path: "/dashboard"
     },
-    {
-      label: "Onboarding",
-      path: "/onboarding"
-    },
+    // {
+    //   label: "Onboarding",
+    //   path: "/onboarding"
+    // },
     {
       label: "Financial Planning",
       path: "/goals"
     },
-    {
-      label: "Assets",
-      path: "/assets"
-    },
+    // {
+    //   label: "Assets",
+    //   path: "/assets"
+    // },
     {
       label: "Investment Management",
       path: "/investment-management"
