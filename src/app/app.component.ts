@@ -2,8 +2,6 @@ import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { HeaderComponent } from "./components/header/header.component";
-import { ProductsListComponent } from './features/products/components/products-list/products-list.component';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
