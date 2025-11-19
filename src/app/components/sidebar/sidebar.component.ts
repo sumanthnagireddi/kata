@@ -28,7 +28,7 @@ export class SidebarComponent {
     //   label: "Assets",
     //   path: "/assets"
     // },
-    {
+  {
       label: "Investment Management",
       path: "/investment-management"
     },
@@ -40,6 +40,10 @@ export class SidebarComponent {
       label: "Profile",
       path:'/profile',
 
+    },
+    {
+      label:'Alerts',
+      path:'/notifications'
     },
     {
       label: "Settings",

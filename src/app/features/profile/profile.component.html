@@ -1,62 +1,152 @@
-<div class="w-full ">
-  <div class="w-full  mx-auto bg-white rounded-2xl shadow-md  p-10">
+<div class="w-full">
+  <div class="w-full mx-auto bg-white rounded-2xl shadow-md p-10">
     <div class="flex flex-col md:flex-row md:items-start gap-10">
+
       <!-- Left: Info -->
       <div class="flex-1">
         <h2 class="text-2xl font-semibold mb-1 text-gray-900">Personal Information</h2>
         <p class="text-gray-500 mb-6">Use a permanent address where you can receive mail.</p>
-        <div class="flex flex-col gap-4">
+
+        <div class="flex flex-col gap-6">
+          <!-- Avatar -->
           <div class="flex gap-6 items-center">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" class="w-24 h-24 rounded-lg object-cover bg-gray-200 border" />
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar"
+              class="w-24 h-24 rounded-lg object-cover bg-gray-200 border" />
             <div>
-              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg font-medium mb-1">Change avatar</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg font-medium mb-1">
+                Change avatar
+              </button>
               <div class="text-xs text-gray-400">JPG, GIF or PNG. 1MB max.</div>
             </div>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+          <!-- Name -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
             <div>
-              <label class="block mb-1 text-sm font-medium text-gray-700">First name</label>
-              <input type="text" [(ngModel)]="data.name" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+              <label class="block mb-1 text-sm font-medium text-gray-700">First Name</label>
+              <input type="text" [(ngModel)]="data.firstName"
+                class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             </div>
             <div>
-              <label class="block mb-1 text-sm font-medium text-gray-700">Last name</label>
-              <input type="text" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+              <label class="block mb-1 text-sm font-medium text-gray-700">Last Name</label>
+              <input type="text" [(ngModel)]="data.lastName"
+                class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             </div>
           </div>
+
+          <!-- Email -->
           <div>
-            <label class="block mb-1 text-sm font-medium text-gray-700">Email address</label>
-            <input type="email" [(ngModel)]="data.email" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            <label class="block mb-1 text-sm font-medium text-gray-700">Email Address</label>
+            <input type="email" [(ngModel)]="data.email"
+              class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
           </div>
+
+          <!-- Username -->
           <div>
             <label class="block mb-1 text-sm font-medium text-gray-700">Username</label>
-            <input type="text" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-gray-400" placeholder="example.com/janesmith" />
+            <input type="text" [(ngModel)]="data.username"
+              class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-gray-700"
+              placeholder="example.com/johndoe" />
           </div>
+
+          <!-- DOB -->
           <div>
             <label class="block mb-1 text-sm font-medium text-gray-700">Date of Birth</label>
-            <input type="date" [(ngModel)]="data.dateOfBirth" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            <input type="date" [(ngModel)]="data.dateOfBirth"
+              class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
           </div>
+
+          <!-- Contact Number -->
           <div>
             <label class="block mb-1 text-sm font-medium text-gray-700">Contact Number</label>
-            <input type="text" [(ngModel)]="data.contactNumber" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            <input type="text" [(ngModel)]="data.contactNumber"
+              class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
           </div>
+
+          <!-- Address -->
           <div>
             <label class="block mb-1 text-sm font-medium text-gray-700">Address</label>
-            <input type="text" [(ngModel)]="data.address" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            <input type="text" [(ngModel)]="data.address"
+              class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
           </div>
+
+          <!-- Risk Tolerance -->
           <div>
             <label class="block mb-1 text-sm font-medium text-gray-700">Risk Tolerance</label>
-            <select [(ngModel)]="data.riskTolerance" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <select [(ngModel)]="data.riskTolerance"
+              class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
               <option>Low</option>
               <option>Medium</option>
               <option>High</option>
             </select>
           </div>
+
+          <!-- Income -->
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700">Annual Income (USD)</label>
+            <input type="number" [(ngModel)]="data.income"
+              class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+
+          <!-- Expenses -->
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700">Annual Expenses (USD)</label>
+            <input type="number" [(ngModel)]="data.expenses"
+              class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+
+          <!-- Assets -->
+          <div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-900">Assets</h3>
+            <div *ngFor="let a of data.assets" class="mb-3">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" [(ngModel)]="a.assetType"
+                  class="bg-white border px-3 py-2 rounded-lg border-gray-300" />
+                <input type="number" [(ngModel)]="a.value"
+                  class="bg-white border px-3 py-2 rounded-lg border-gray-300" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Liabilities -->
+          <div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-900">Liabilities</h3>
+            <div *ngFor="let l of data.liabilities" class="mb-3">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" [(ngModel)]="l.liabilityType"
+                  class="bg-white border px-3 py-2 rounded-lg border-gray-300" />
+                <input type="number" [(ngModel)]="l.amount"
+                  class="bg-white border px-3 py-2 rounded-lg border-gray-300" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Goals -->
+          <div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-900">Financial Goals</h3>
+            <div *ngFor="let g of data.financialGoals" class="mb-3">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <input type="text" [(ngModel)]="g.goalType"
+                  class="bg-white border px-3 py-2 rounded-lg border-gray-300" />
+                <input type="number" [(ngModel)]="g.targetAmount"
+                  class="bg-white border px-3 py-2 rounded-lg border-gray-300" />
+                <input type="date" [(ngModel)]="g.targetDate"
+                  class="bg-white border px-3 py-2 rounded-lg border-gray-300" />
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <!-- Right: Save button -->
+
+      <!-- Right: Save Button -->
       <div class="flex flex-col items-center md:items-end mt-8 md:mt-0">
-        <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-3 rounded-lg font-semibold shadow transition">Save</button>
+        <button
+          class="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-3 rounded-lg font-semibold shadow transition">
+          Save
+        </button>
       </div>
+
     </div>
   </div>
 </div>

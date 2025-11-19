@@ -10,36 +10,74 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProfileComponent {
   data = {
-    "userId": "string",
-    "name": "string",
-    "email": "string",
-    "dateOfBirth": "string",  // ISO 8601 date
-    "contactNumber": "string",
-    "address": "string",
-    "riskTolerance": "string", // e.g., "Low", "Medium", "High"
-    "financialGoals": [
+    userId: "USR001",
+
+    // Personal info
+    firstName: "John",
+    lastName: "Doe",
+    name: "John Doe",
+    username: "johndoe",
+    email: "john.doe@example.com",
+    dateOfBirth: "1988-09-25",
+    contactNumber: "+1-202-555-0198",
+    address: "123 Elm Street, Springfield, USA",
+
+    // Risk profile
+    riskTolerance: "Medium",
+
+    // Financial Goals
+    financialGoals: [
       {
-        "goalId": "string",
-        "goalType": "string", // e.g., "Retirement", "Education"
-        "targetAmount": "number",
-        "targetDate": "string" // ISO 8601 date
+        goalId: "G001",
+        goalType: "Retirement",
+        targetAmount: 750000,
+        targetDate: "2050-01-01"
+      },
+      {
+        goalId: "G002",
+        goalType: "Emergency Fund",
+        targetAmount: 20000,
+        targetDate: "2026-01-01"
       }
     ],
-    "income": "number",
-    "expenses": "number",
-    "assets": [
+
+    // Income & Expenses
+    income: 95000,
+    expenses: 48000,
+
+    // Assets
+    assets: [
       {
-        "assetId": "string",
-        "assetType": "string", // e.g., "Property", "Stock"
-        "value": "number"
+        assetId: "A001",
+        assetType: "Property",
+        value: 320000
+      },
+      {
+        assetId: "A002",
+        assetType: "Stock",
+        value: 54000
+      },
+      {
+        assetId: "A003",
+        assetType: "Savings Account",
+        value: 15000
       }
     ],
-    "liabilities": [
+
+    // Liabilities
+    liabilities: [
       {
-        "liabilityId": "string",
-        "liabilityType": "string", // e.g., "Mortgage", "Loan"
-        "amount": "number"
+        liabilityId: "L001",
+        liabilityType: "Mortgage",
+        amount: 210000
+      },
+      {
+        liabilityId: "L002",
+        liabilityType: "Credit Card Debt",
+        amount: 3200
       }
     ]
-  }
+  };
 }
+
+

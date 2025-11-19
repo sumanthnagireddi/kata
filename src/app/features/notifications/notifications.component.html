@@ -1,0 +1,33 @@
+<div class="p-6 bg-gray-50 min-h-screen">
+  <div class="mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-gray-900">Notifications & Alerts</h2>
+
+    <div class="space-y-4">
+      <div
+        *ngFor="let n of notifications"
+        class="p-5 rounded-2xl shadow hover:shadow-lg transition cursor-pointer border flex gap-4"
+        [ngClass]="{
+          'bg-white': n.read,
+          'bg-blue-50': !n.read
+        }"
+      >
+        <div class="flex-1">
+          <p class="text-sm font-semibold text-gray-700">{{ n.type }}</p>
+          <p class="text-gray-900 text-base mt-1">{{ n.message }}</p>
+          <p class="text-xs text-gray-500 mt-2">{{ n.date }}</p>
+        </div>
+        <div class="flex items-center">
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium"
+            [ngClass]="{
+              'bg-green-100 text-green-700': n.read,
+              'bg-red-100 text-red-700': !n.read
+            }"
+          >
+            {{ n.read ? 'Read' : 'Unread' }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

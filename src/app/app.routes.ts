@@ -6,6 +6,7 @@ import { ProfileComponent } from './features/profile/profile.component';
 import { GoalsComponent } from './features/goals/goals.component';
 import { AdvisoryComponent } from './features/advisory/advisory.component';
 import { InvestmentManagementComponent } from './features/investment-management/investment-management.component';
+import { NotificationsComponent } from './features/notifications/notifications.component';
 
 export const routes: Routes = [
   {
@@ -18,7 +19,8 @@ export const routes: Routes = [
       { path:'profile',component:ProfileComponent},
       {path:'goals',component:GoalsComponent},
       {path:'advisory',component:AdvisoryComponent},
-      {path:'investment-management',component:InvestmentManagementComponent}
+      {path:'investment-management',component:InvestmentManagementComponent},
+      {path:'notifications',component:NotificationsComponent}
     ]
   },
   {
