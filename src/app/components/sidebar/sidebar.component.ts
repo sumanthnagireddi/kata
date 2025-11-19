@@ -29,8 +29,8 @@ export class SidebarComponent {
       path: "/assets"
     },
     {
-      label: "Reports",
-      path: "/reports"
+      label: "Investment Management",
+      path: "/investment-management"
     },
     {
       label: "Advisory",

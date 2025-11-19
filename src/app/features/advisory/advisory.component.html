@@ -1,0 +1,65 @@
+<div class="p-6 mx-auto space-y-6">
+  <!-- Header -->
+  <div class="flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl font-semibold">AI Advisory Services</h1>
+      <p class="text-sm text-slate-500">Smart insights tailored by AI for better financial decisions</p>
+    </div>
+    <button class="px-4 py-2 bg-slate-800 text-white rounded-xl shadow hover:opacity-90">New Session</button>
+  </div>
+
+  <!-- Session Card -->
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <div class="flex items-start justify-between mb-4">
+      <div>
+        <h2 class="text-lg font-medium">Session Details</h2>
+        <p class="text-xs text-slate-500">Session ID: {{ session.advisorySessionId }}</p>
+      </div>
+      <span class="px-3 py-1 text-xs rounded-full bg-slate-900 text-white">{{ session.sessionType }}</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+      <div>
+        <p class="text-slate-500">User ID</p>
+        <p class="font-medium">{{ session.userId }}</p>
+      </div>
+      <div>
+        <p class="text-slate-500">Advisor (AI Model)</p>
+        <p class="font-medium">{{ session.advisorId }}</p>
+      </div>
+      <div>
+        <p class="text-slate-500">Date</p>
+        <p class="font-medium">{{ session.date | date:'medium' }}</p>
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <h3 class="text-sm font-semibold mb-2">Session Notes</h3>
+      <div class="p-4 bg-slate-50 rounded-xl text-sm text-slate-600 border border-slate-200 whitespace-pre-line">{{ session.notes }}</div>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="mt-6">
+      <h3 class="text-sm font-semibold mb-3">AI Recommendations</h3>
+
+      <div class="space-y-4">
+        <div *ngFor="let r of session.recommendations" class="flex items-start justify-between p-4 rounded-xl border border-slate-200 bg-white hover:shadow-sm transition">
+          <div>
+            <p class="text-sm font-medium">{{ r.description }}</p>
+            <p class="text-xs text-slate-500">ID: {{ r.recommendationId }}</p>
+          </div>
+          <span
+            class="px-3 py-1 text-xs rounded-full font-medium"
+            [ngClass]="{
+              'bg-yellow-100 text-yellow-700': r.status === 'Pending',
+              'bg-green-100 text-green-700': r.status === 'Completed'
+            }"
+          >
+            {{ r.status }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -4,6 +4,8 @@ import { authGuard } from './guards/auth.guard';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { ProfileComponent } from './features/profile/profile.component';
 import { GoalsComponent } from './features/goals/goals.component';
+import { AdvisoryComponent } from './features/advisory/advisory.component';
+import { InvestmentManagementComponent } from './features/investment-management/investment-management.component';
 
 export const routes: Routes = [
   {
@@ -11,10 +13,12 @@ export const routes: Routes = [
     component: MainComponent,
     // canActivate: [authGuard],
     children: [
-      { path: '', redirectTo: 'products', pathMatch: 'full' },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: "dashboard", component: DashboardComponent },
       { path:'profile',component:ProfileComponent},
-      {path:'goals',component:GoalsComponent}
+      {path:'goals',component:GoalsComponent},
+      {path:'advisory',component:AdvisoryComponent},
+      {path:'investment-management',component:InvestmentManagementComponent}
     ]
   },
   {
