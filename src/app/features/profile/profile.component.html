@@ -1,0 +1,62 @@
+<div class="w-full ">
+  <div class="w-full  mx-auto bg-white rounded-2xl shadow-md  p-10">
+    <div class="flex flex-col md:flex-row md:items-start gap-10">
+      <!-- Left: Info -->
+      <div class="flex-1">
+        <h2 class="text-2xl font-semibold mb-1 text-gray-900">Personal Information</h2>
+        <p class="text-gray-500 mb-6">Use a permanent address where you can receive mail.</p>
+        <div class="flex flex-col gap-4">
+          <div class="flex gap-6 items-center">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" class="w-24 h-24 rounded-lg object-cover bg-gray-200 border" />
+            <div>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg font-medium mb-1">Change avatar</button>
+              <div class="text-xs text-gray-400">JPG, GIF or PNG. 1MB max.</div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <div>
+              <label class="block mb-1 text-sm font-medium text-gray-700">First name</label>
+              <input type="text" [(ngModel)]="data.name" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <div>
+              <label class="block mb-1 text-sm font-medium text-gray-700">Last name</label>
+              <input type="text" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+          </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700">Email address</label>
+            <input type="email" [(ngModel)]="data.email" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700">Username</label>
+            <input type="text" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-gray-400" placeholder="example.com/janesmith" />
+          </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700">Date of Birth</label>
+            <input type="date" [(ngModel)]="data.dateOfBirth" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700">Contact Number</label>
+            <input type="text" [(ngModel)]="data.contactNumber" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700">Address</label>
+            <input type="text" [(ngModel)]="data.address" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700">Risk Tolerance</label>
+            <select [(ngModel)]="data.riskTolerance" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Save button -->
+      <div class="flex flex-col items-center md:items-end mt-8 md:mt-0">
+        <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-3 rounded-lg font-semibold shadow transition">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

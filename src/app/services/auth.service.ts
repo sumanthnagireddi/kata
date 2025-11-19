@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
-import { BehaviorSubject, Observable, Subject, tap } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,18 +12,18 @@ export class AuthService {
   constructor(private readonly http: HttpClient) { }
 
   login(email: string, password: string): Observable<any> {
-    return this.http.post(
-      `${environment.apiUrl}/user/login`,
-      { email, password },
-      { withCredentials: true }
-    ).pipe(
-      tap((response: any) => {
-        if (response.token) {
-          localStorage.setItem('authToken', response.token);
-        }
-      })
-    );
+    const fakeResponse = {
+      success: true,
+      message: 'Login success (mocked)',
+      token: 'mock-token-123'
+    };
+
+    // You can store the fake token if needed
+    localStorage.setItem('authToken', fakeResponse.token);
+
+    return of(fakeResponse);
   }
+
 
   logout(): void {
     document.cookie = "token=; Max-Age=0; path=/;";

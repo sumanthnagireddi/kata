@@ -17,15 +17,11 @@ export class SidebarComponent {
       path: "/dashboard"
     },
     {
-      label: "Charts",
-      path: "/charts"
+      label: "Onboarding",
+      path: "/onboarding"
     },
     {
-      label: "Statistics",
-      path: "/statistics"
-    },
-    {
-      label: "Goals",
+      label: "Financial Planning",
       path: "/goals"
     },
     {
@@ -33,15 +29,21 @@ export class SidebarComponent {
       path: "/assets"
     },
     {
-      label: "Market Trends",
-      path: "/market-trends"
+      label: "Reports",
+      path: "/reports"
     },
     {
       label: "Advisory",
       path: "/advisory"
     },
     {
+      label: "Profile",
+      path:'/profile',
+
+    },
+    {
       label: "Settings",
+      path:'/profile',
       sub: [
         { label: "General Settings", path: "/settings/general" },
         { label: "Payment Settings", path: "/settings/payments" },

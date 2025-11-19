@@ -29,17 +29,17 @@ export class LoginComponent {
       this.authService.login(email, password).subscribe({
         next: () => {
           console.log('Login success');
+          this.router.navigate(['dashboard'])
+          // this.activatedRoute.queryParams.subscribe(params => {
+          //   console.log('Query params:', params);
+          //   const returnUrl = params['returnUrl'] || '/products';
 
-          this.activatedRoute.queryParams.subscribe(params => {
-            console.log('Query params:', params);
-            const returnUrl = params['returnUrl'] || '/products';
-
-            this.router.navigate([returnUrl]).then(success => {
-              console.log('Navigation success:', success);
-            }).catch(err => {
-              console.error('Navigation error:', err);
-            });
-          });
+          //   this.router.navigate([returnUrl]).then(success => {
+          //     console.log('Navigation success:', success);
+          //   }).catch(err => {
+          //     console.error('Navigation error:', err);
+          //   });
+          // });
         },
         error: (err) => {
           console.error('Login failed:', err);

@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { authGuard } from './guards/auth.guard';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { ProfileComponent } from './features/profile/profile.component';
+import { GoalsComponent } from './features/goals/goals.component';
 
 export const routes: Routes = [
   {
@@ -11,7 +13,8 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'products', pathMatch: 'full' },
       { path: "dashboard", component: DashboardComponent },
-
+      { path:'profile',component:ProfileComponent},
+      {path:'goals',component:GoalsComponent}
     ]
   },
   {
