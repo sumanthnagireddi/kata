@@ -78,16 +78,89 @@
     </div>
   </div>
     <!-- Left: Portfolio Performance (70%) -->
-    <div class="bg-white rounded-lg shadow p-4 flex flex-col h-full md:col-span-7">
-      <div class="font-semibold mb-2">Portfolio performance</div>
-      
-      <!-- <canvas baseChart
-        [data]="lineChartData"
-        [options]="lineChartOptions"
-        chartType="line"
-        height="80">
-      </canvas> -->
+    <div class="bg-white rounded-lg shadow p-6 flex flex-col h-full md:col-span-7">
+      <div class="font-semibold text-lg mb-4">Portfolio Performance</div>
+
+      <!-- Summary Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="p-4 border rounded-xl bg-gray-50">
+          <div class="text-sm text-gray-500">Total Return</div>
+          <div class="text-2xl font-semibold">{{ performance.totalReturn }}%</div>
+          <div
+            class="text-sm mt-1"
+            [ngClass]="performance.totalReturn >= 0 ? 'text-green-600' : 'text-red-600'"
+          >
+            {{ performance.totalReturn >= 0 ? '▲ Positive' : '▼ Negative' }}
+          </div>
+        </div>
+
+        <div class="p-4 border rounded-xl bg-gray-50">
+          <div class="text-sm text-gray-500">Annualized Return</div>
+          <div class="text-2xl font-semibold">{{ performance.annualizedReturn }}%</div>
+          <div
+            class="text-sm mt-1"
+            [ngClass]="performance.annualizedReturn >= 0 ? 'text-green-600' : 'text-red-600'"
+          >
+            {{ performance.annualizedReturn >= 0 ? '▲ Growing' : '▼ Declining' }}
+          </div>
+        </div>
+
+        <div class="p-4 border rounded-xl bg-gray-50">
+          <div class="text-sm text-gray-500">Volatility</div>
+          <div class="text-2xl font-semibold">{{ performance.volatility }}%</div>
+          <div class="text-sm mt-1 text-gray-600">Risk Indicator</div>
+        </div>
+      </div>
+
+      <!-- Performance Progress Bars -->
+      <div class="space-y-4">
+
+        <!-- Total Return -->
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm text-gray-600">Total Return Progress</span>
+            <span class="text-sm font-medium">{{ performance.totalReturn }}%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div
+              class="h-2 rounded-full"
+              [ngClass]="performance.totalReturn >= 0 ? 'bg-green-500' : 'bg-red-500'"
+              [style.width.%]="getProgress(performance.totalReturn)"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Annualized -->
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm text-gray-600">Annualized Growth</span>
+            <span class="text-sm font-medium">{{ performance.annualizedReturn }}%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div
+              class="h-2 rounded-full bg-indigo-500"
+              [style.width.%]="getProgress(performance.annualizedReturn)"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Volatility -->
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm text-gray-600">Volatility Level</span>
+            <span class="text-sm font-medium">{{ performance.volatility }}%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div
+              class="h-2 rounded-full bg-yellow-500"
+              [style.width.%]="getProgress(performance.volatility)"
+            ></div>
+          </div>
+        </div>
+
+      </div>
     </div>
+
 </div>
 <!-- Transactions Table -->
 <div class="overflow-x-auto rounded border border-gray-300 shadow-sm mt-4">

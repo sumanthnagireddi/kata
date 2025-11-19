@@ -136,7 +136,18 @@ export class DashboardComponent {
       checked: false
     }
   ];
+  performance = {
+    totalReturn: 12.5,
+    annualizedReturn: 8.2,
+    volatility: 14.3
+  };
 
+  getProgress(value: number): number {
+    // Convert negative values to positive width
+    const val = Math.abs(value);
+    // Ensure max width = 100%
+    return val > 100 ? 100 : val;
+  }
   // Chart.js line chart config for Portfolio performance
   public lineChartData: ChartConfiguration<'line'>['data'] = {
     labels: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
