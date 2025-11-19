@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,RouterLinkActive],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+  constructor(private router: Router) {}
+
   navLinks = [
     {
       label: "Dashboard",
@@ -47,5 +49,11 @@ export class SidebarComponent {
       ]
     }
   ];
-
+  isActive(path: string): boolean {
+    return this.router.isActive(path, { paths: 'exact', queryParams: 'ignored', fragment: 'ignored', matrixParams: 'ignored' });
+  }
+  isAnySubItemActive(subItems: any[]): boolean {
+    // Replace this logic with the actual condition to check if any sub-item is active
+    return subItems.some(subItem => subItem.active);
+  }
 }
